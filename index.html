@@ -37,7 +37,7 @@ html, body {
 .content img:first-child { max-width: 100%; border-radius: 12px; }
 
 /* Footer */
-.footer { background-color: #024FA2; color: white; height: 60px; display: flex; align-items: center; justify-content: center; position: fixed; bottom: 0; left: 0; right: 0; font-size: 16px; flex-direction: row; gap: 12px; }
+.footer { background-color: #024FA2; color: white; height: 60px; display: flex; align-items: center; justify-content: center; position: fixed; bottom: 0; left: 0; right: 0; font-size: 16px; flex-direction: column; }
 
 /* Rectangles */
 .rect-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px; }
@@ -46,7 +46,7 @@ html, body {
 .rectangle .text-container { display: none; } 
 .rectangle:hover { transform: scale(1.02); box-shadow: 0 8px 18px rgba(0,0,0,0.25); }
 .rectangle.under-construction { background: url('Stud.png') no-repeat center center; background-size: cover; position: relative; }
-.rectangle.under-construction::after { content: "UNDER CONSTRUCTION"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-20deg); background: yellow; color: black; font-weight: 700; padding: 6px 10px; border-radius: 6px; }
+.rectangle.under-construction::after { content: "UNDER CONSTRUCTION"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-20deg); background: yellow; color: black; font-weight: 800; padding: 8px 12px; border-radius: 6px; }
 
 /* Smaller webp images for creators & special people */
 .rectangle img.small-img {
@@ -83,7 +83,7 @@ html, body {
 /* Location popup */
 .location-popup { position: fixed; inset: 0; background: rgba(0,0,0,0.65); display: none; align-items: center; justify-content: center; z-index: 999; }
 .location-popup.active { display: flex; }
-.popup-box { width: 85%; max-width: 950px; background: rgba(2,79,162,0.92); border-radius: 14px; padding: 20px; display: flex; gap: 20px; position: relative; box-shadow: 0 18px 40px rgba(0,0,0,0.6); transform: translateY(0); }
+.popup-box { width: 85%; max-width: 950px; background: rgba(2,79,162,0.92); border-radius: 14px; padding: 20px; display: flex; gap: 20px; position: relative; box-shadow: 0 18px 40px rgba(0,0,0,0.6); transform-origin: center; }
 @keyframes popupIn { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
 @keyframes popupOut { from { opacity: 1; transform: scale(1); } to { opacity: 0; transform: scale(0.96); } }
 .location-popup.active .popup-box { animation: popupIn 260ms cubic-bezier(.2,.9,.2,1) forwards; }
@@ -167,7 +167,7 @@ function updateClock(){const now=new Date(); document.getElementById("clock").te
 setInterval(updateClock,1000); updateClock();
 
 // Sidebar toggle
-function toggleSidebar(){document.getElementById("sidebar").classList.toggle("active"); document.getElementById("overlay").classList.toggle("active"); document.querySelector(".tab-toggle").textContent = document.getElementById("sidebar").classList.contains("active") ? "✖" : "☰"; }
+function toggleSidebar(){document.getElementById("sidebar").classList.toggle("active"); document.getElementById("overlay").classList.toggle("active"); document.querySelector(".tab-toggle").textContent = document.getElementById("sidebar").classList.contains("active") ? "✖" : "☰";}
 
 // Last updated
 document.getElementById('last-updated').textContent = 'Last Updated: '+document.lastModified;
@@ -268,14 +268,14 @@ function showContent(tab){
     if(tab==="home"){
         content.innerHTML='<img src="Retro-Plains-Wiki.png" alt="Welcome"><br><a href="index.html" class="button">Back to Home</a><a href="https://www.roblox.com/games/125897335112047/W-I-P-The-Town-of-Retro-Plains" target="_blank" class="roblox-button">Play Retro Plains on Roblox</a>';
     } else if(tab==="about"){
-        content.innerHTML="<h2>About Retro Plains</h2><p>Retro Plains is a classic Roblox-inspired town filled with cozy areas, creative builds, and iconic places for players to explore. Created by fisnisse09 and friends, it's a cozy project celebrating classic Roblox vibes.</p>";
+        content.innerHTML="<h2>About Retro Plains</h2><p>Retro Plains is a classic Roblox-inspired town filled with cozy areas, creative builds, and iconic places for players to explore. Created by fisnisse09, it celebrates simple, nostalgic design and community storytelling.</p>";
     } else if(tab==="locations"){
         content.innerHTML="<h2>Locations of Retro Plains</h2><div class='rect-container'>\
         <div class='rectangle' onclick=\"openLocation('Retro Plains Centre.png','Retro Plains Centre','The bustling heart of Retro Plains, filled with cozy cafes, shops, and friendly Robloxians.')\"><img src='Retro Plains Centre.png'></div>\
         <div class='rectangle' onclick=\"openLocation('Retro Plains Hospital.png','Retro Plains Hospital','Where residents receive care and attention. Known for its helpful staff.')\"><img src='Retro Plains Hospital.png'></div>\
         <div class='rectangle' onclick=\"openLocation('Retro Plains Farm.png','Retro Plains Farm','Scenic farmland tended by the Bloxian Family.')\"><img src='Retro Plains Farm.png'></div>\
-        <div class='rectangle' onclick=\"openLocation('Grandma and Grandpas House.png','Grandma &amp; Grandpa&#39;s House','Filled with stories, memories, and laughter.')\"><img src='Grandma and Grandpas House.png'></div>\
-        <div class='rectangle' onclick=\"openLocation('Mayors Cabin.png','Mayor&#39;s Cabin','Where town decisions are made, ensuring charm and peace.')\"><img src='Mayors Cabin.png'></div>\
+        <div class='rectangle' onclick='openLocation("Grandma and Grandpas House.png","Grandma &amp; Grandpa\'s House","Filled with stories, memories, and laughter.")'><img src='Grandma and Grandpas House.png'></div>\
+        <div class='rectangle' onclick='openLocation("Mayors Cabin.png","Mayor\'s Cabin","Where town decisions are made, ensuring charm and peace.")'><img src='Mayors Cabin.png'></div>\
         <div class='rectangle' onclick=\"openLocation('Retroium Castle.png','Retroium Castle','Historic castle of Bloxius IV.')\"><img src='Retroium Castle.png'></div>\
         <div class='rectangle' onclick=\"openLocation('Retro Plains Police Station.png','Retro Plains Police Station','Hub of safety and order.')\"><img src='Retro Plains Police Station.png'></div>\
         <div class='rectangle' onclick=\"openLocation('MONTYLOKS Luxury Cabin.png','MONTYLOKS Luxury Cabin','Private retreat with luxurious interiors.')\"><img src='MONTYLOKS Luxury Cabin.png'></div>\
