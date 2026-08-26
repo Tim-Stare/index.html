@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Retro Plains Wiki</title>
 <link rel="icon" type="image/png" href="Retro-Plains-HTML.png">
-
 <style>
 html, body {
   height: 100%;
@@ -28,17 +27,8 @@ html, body {
   justify-content: space-between;
   padding: 0 15px;
 }
-
-.left-section {
-  display: flex;
-  align-items: center;
-}
-
-.left-section img {
-  height: 42px;
-  margin-right: 10px;
-}
-
+.left-section { display: flex; align-items: center; }
+.left-section img { height: 42px; margin-right: 10px; }
 .tab-toggle {
   background: none;
   border: none;
@@ -47,10 +37,7 @@ html, body {
   cursor: pointer;
   margin-right: 12px;
 }
-
-.clock {
-  font-size: 15px;
-}
+.clock { font-size: 15px; }
 
 /* Sidebar */
 .sidebar {
@@ -67,11 +54,7 @@ html, body {
   z-index: 100;
   box-shadow: 2px 0 8px rgba(0,0,0,0.3);
 }
-
-.sidebar.active {
-  transform: translateX(0);
-}
-
+.sidebar.active { transform: translateX(0); }
 .sidebar button {
   display: block;
   width: 100%;
@@ -87,12 +70,10 @@ html, body {
   transition: all 0.2s ease;
   cursor: pointer;
 }
-
 .sidebar button:hover {
   background-color: #e0e0e0;
   border-left-color: #024FA2;
 }
-
 .sidebar button.active {
   background-color: #ddd;
   border-left-color: #024FA2;
@@ -110,10 +91,7 @@ html, body {
   z-index: 90;
   display: none;
 }
-
-.overlay.active {
-  display: block;
-}
+.overlay.active { display: block; }
 
 /* Content */
 .content {
@@ -121,8 +99,7 @@ html, body {
   text-align: center;
   overflow: hidden;
 }
-
-.content > img:first-child {
+.content img:first-child {
   max-width: 100%;
   border-radius: 12px;
 }
@@ -141,7 +118,6 @@ html, body {
   right: 0;
   font-size: 16px;
   flex-direction: column;
-  z-index: 150;
 }
 
 /* Rectangles */
@@ -152,7 +128,6 @@ html, body {
   gap: 20px;
   margin-top: 20px;
 }
-
 .rectangle {
   position: relative;
   background-color: #024FA2;
@@ -167,7 +142,6 @@ html, body {
   cursor: pointer;
   transition: transform 0.25s ease;
 }
-
 .rectangle img {
   width: 100%;
   height: 100%;
@@ -178,22 +152,16 @@ html, body {
   left: 0;
   border-radius: 12px;
 }
-
-.rectangle .text-container {
-  display: none;
-}
-
+.rectangle .text-container { display: none; }
 .rectangle:hover {
   transform: scale(1.02);
   box-shadow: 0 8px 18px rgba(0,0,0,0.25);
 }
-
 .rectangle.under-construction {
   background: url('Stud.png') no-repeat center center;
   background-size: cover;
   position: relative;
 }
-
 .rectangle.under-construction::after {
   content: "UNDER CONSTRUCTION";
   position: absolute;
@@ -205,12 +173,10 @@ html, body {
   font-weight: bold;
   padding: 5px 10px;
   border: 2px solid black;
-  white-space: nowrap;
 }
 
 /* Smaller images for creators & special people */
-.rectangle img.small-img,
-.rectangle img.medium-img {
+.rectangle img.small-img {
   width: 60%;
   height: 60%;
   object-fit: contain;
@@ -219,10 +185,18 @@ html, body {
   transform: translate(-50%, -50%);
   border-radius: 12px;
 }
+.rectangle img.medium-img {
+  width: 75%;
+  height: 75%;
+  object-fit: contain;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+}
 
 /* Buttons */
-.button,
-.roblox-button {
+.button, .roblox-button {
   display: block;
   width: 300px;
   max-width: 90%;
@@ -237,22 +211,15 @@ html, body {
   text-decoration: none;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-sizing: border-box;
 }
-
-.button:hover,
-.roblox-button:hover {
+.button:hover, .roblox-button:hover {
   transform: translateY(-2px);
 }
 
 /* Retro Railways */
 .content h2.retro-railways {
   color: white;
-  text-shadow:
-    -2px -2px 0 red,
-     2px -2px 0 red,
-    -2px  2px 0 red,
-     2px  2px 0 red;
+  text-shadow: -2px -2px 0 red, 2px -2px 0 red, -2px 2px 0 red, 2px 2px 0 red;
   font-size: 28px;
 }
 
@@ -263,24 +230,18 @@ html, body {
   right: 20px;
   z-index: 200;
 }
-
 #music-button {
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
 }
-
 #music-button img {
   width: 50px;
   height: 50px;
   transition: transform 0.1s ease;
 }
-
-#music-button:active img {
-  transform: scale(0.85);
-}
-
+#music-button:active img { transform: scale(0.85); }
 #music-popup {
   position: fixed;
   bottom: 70px;
@@ -295,24 +256,17 @@ html, body {
   transition: right 0.3s ease;
   z-index: 200;
 }
-
-#music-popup.active {
-  right: 20px;
-}
-
+#music-popup.active { right: 20px; }
 #radio-header img {
   width: 100%;
   border-radius: 8px;
 }
-
 #music-controls {
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin-top: 10px;
-  gap: 5px;
 }
-
 #music-controls button {
   background: #024FA2;
   border: none;
@@ -323,15 +277,8 @@ html, body {
   font-weight: bold;
   transition: all 0.2s ease;
 }
-
-#music-controls button:hover {
-  transform: scale(1.1);
-}
-
-#loop-song.active {
-  background: #0366d6;
-}
-
+#music-controls button:hover { transform: scale(1.1); }
+#loop-song.active { background: #0366d6; }
 #current-song {
   font-weight: bold;
   margin-top: 8px;
@@ -346,19 +293,11 @@ html, body {
   align-items: center;
   justify-content: center;
   z-index: 999;
-  padding: 20px;
-  box-sizing: border-box;
 }
-
-.location-popup.active {
-  display: flex;
-}
-
+.location-popup.active { display: flex; }
 .popup-box {
   width: 85%;
   max-width: 950px;
-  max-height: 85vh;
-  overflow-y: auto;
   background: rgba(2,79,162,0.92);
   border-radius: 14px;
   padding: 20px;
@@ -367,72 +306,43 @@ html, body {
   position: relative;
   box-shadow: 0 18px 40px rgba(0,0,0,0.6);
   transform-origin: center center;
-  box-sizing: border-box;
 }
-
 @keyframes popupIn {
-  from {
-    opacity: 0;
-    transform: scale(0.96);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
 }
-
 @keyframes popupOut {
-  from {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  to {
-    opacity: 0;
-    transform: scale(0.96);
-  }
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.96); }
 }
-
 .location-popup.active .popup-box {
   animation: popupIn 260ms cubic-bezier(.2,.9,.2,1) forwards;
 }
-
 .location-popup.closing .popup-box {
-  animation: popupOut 180ms cubic-bezier(.4,0,.2,1) forwards;
+  animation: popupOut 180ms cubic-bezier(.4,.0,.2,1) forwards;
 }
-
 .popup-left {
   width: 50%;
   text-align: center;
 }
-
 .popup-left img {
   width: 100%;
-  max-height: 500px;
-  object-fit: contain;
   border-radius: 10px;
   display: block;
 }
-
 .popup-title {
   color: white;
   font-weight: bold;
   margin-top: 10px;
   font-size: 20px;
 }
-
 .popup-right {
   width: 50%;
   color: white;
   text-align: left;
   line-height: 1.45;
 }
-
-.popup-right h3 {
-  margin-top: 0;
-}
-
+.popup-right h3 { margin-top: 0; }
 .popup-close {
   position: absolute;
   top: 10px;
@@ -440,47 +350,20 @@ html, body {
   color: white;
   font-size: 24px;
   cursor: pointer;
-  z-index: 2;
-}
-
-/* Mobile */
-@media (max-width: 700px) {
-  .popup-box {
-    flex-direction: column;
-  }
-
-  .popup-left,
-  .popup-right {
-    width: 100%;
-  }
-
-  .rectangle {
-    width: 90%;
-    max-width: 300px;
-  }
-
-  #music-popup {
-    width: 280px;
-  }
 }
 </style>
 </head>
-
 <body>
 
-<!-- Top Bar -->
 <div class="top-bar">
   <div class="left-section">
     <button class="tab-toggle" onclick="toggleSidebar()">☰</button>
-
     <img src="Roblox-Logo.png" alt="Roblox Logo">
     <img src="Retro-Plains-Logo-2.png" alt="Retro Plains Logo">
   </div>
-
   <div class="clock" id="clock"></div>
 </div>
 
-<!-- Sidebar -->
 <div class="sidebar" id="sidebar">
   <button onclick="showContent('home')">Home</button>
   <button onclick="showContent('about')">About Retro Plains</button>
@@ -492,642 +375,275 @@ html, body {
 
 <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
 
-<!-- Main Content -->
 <div class="content" id="content">
+  <img src="Retro-Plains-Wiki.png" alt="Welcome">
+  <br>
+  <a href="index.html" class="button">Back to Home</a>
+  <a href="https://www.roblox.com/games/125897335112047/W-I-P-The-Town-of-Retro-Plains" target="_blank" class="roblox-button">Play Retro Plains on Roblox</a>
 </div>
 
-<!-- Footer -->
 <div class="footer">
   <span>© 2025 Retro Plains Wiki – Made by Tragedy (@fisnisse09)</span>
-  <span id="last-updated">Last Updated:</span>
+  <span id="last-updated">Last Updated: </span>
 </div>
 
-<!-- Music Player -->
 <div id="music-player-container">
-
-  <button id="music-button">
-    <img src="Roblox-Logo-Blue.png" alt="Music Player">
-  </button>
-
+  <button id="music-button"><img src="Roblox-Logo-Blue.png" alt="Music Player"></button>
   <div id="music-popup">
-
-    <div id="radio-header">
-      <img src="Retro-Plains-Radio-Player.png" alt="Radio Player">
-    </div>
-
+    <div id="radio-header"><img src="Retro-Plains-Radio-Player.png" alt="Radio Player"></div>
     <audio id="radio-audio" controls></audio>
-
-    <div id="current-song">Now Playing:</div>
-
+    <div id="current-song">Now Playing: </div>
     <div id="music-controls">
       <button id="prev-song">Prev</button>
       <button id="play-pause">Play</button>
       <button id="next-song">Next</button>
       <button id="loop-song">Loop</button>
     </div>
-
   </div>
 </div>
 
-<!-- Location Popup -->
-<div class="location-popup" id="locationPopup">
-
+<div class="location-popup" id="locationPopup" onclick="closePopup(event)">
   <div class="popup-box" id="popupBox">
-
-    <div class="popup-close" id="popupClose">✖</div>
-
+    <div class="popup-close" onclick="closePopup()">✖</div>
     <div class="popup-left">
       <img id="popupImage" alt="">
       <div class="popup-title" id="popupTitle"></div>
     </div>
-
     <div class="popup-right">
       <h3>Lore</h3>
       <p id="popupLore"></p>
-
       <h3>Built By</h3>
-      <p>fisnisse09</p>
+      <p id="popupBuiltBy"></p>
     </div>
-
   </div>
 </div>
 
 <script>
-
-/* =========================
-   CLOCK
-========================= */
-
+// Clock
 function updateClock() {
   const now = new Date();
-
-  document.getElementById("clock").textContent =
-    now.toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit"
-    });
+  document.getElementById("clock").textContent = now.toLocaleTimeString([], {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
+  });
 }
-
 setInterval(updateClock, 1000);
 updateClock();
 
-
-/* =========================
-   SIDEBAR
-========================= */
-
+// Sidebar toggle
 function toggleSidebar() {
-  const sidebar = document.getElementById("sidebar");
-  const overlay = document.getElementById("overlay");
-  const toggleButton = document.querySelector(".tab-toggle");
-
-  sidebar.classList.toggle("active");
-  overlay.classList.toggle("active");
-
-  toggleButton.textContent =
-    sidebar.classList.contains("active") ? "✖" : "☰";
+  document.getElementById("sidebar").classList.toggle("active");
+  document.getElementById("overlay").classList.toggle("active");
+  document.querySelector(".tab-toggle").textContent =
+    document.getElementById("sidebar").classList.contains("active") ? "✖" : "☰";
 }
 
+// Last updated
+document.getElementById('last-updated').textContent = 'Last Updated: ' + document.lastModified;
 
-/* =========================
-   LAST UPDATED
-========================= */
-
-document.getElementById("last-updated").textContent =
-  "Last Updated: " + document.lastModified;
-
-
-/* =========================
-   LOCATION POPUP
-========================= */
-
-const locationPopup = document.getElementById("locationPopup");
-const popupBox = document.getElementById("popupBox");
-const popupImage = document.getElementById("popupImage");
-const popupTitle = document.getElementById("popupTitle");
-const popupLore = document.getElementById("popupLore");
-const popupClose = document.getElementById("popupClose");
-
+// Popup handlers
+const locationPopup = document.getElementById('locationPopup');
+const popupBox = document.getElementById('popupBox');
+const popupImage = document.getElementById('popupImage');
+const popupTitle = document.getElementById('popupTitle');
+const popupLore = document.getElementById('popupLore');
+const popupBuiltBy = document.getElementById('popupBuiltBy');
 let closeTimer = null;
 
-function openLocation(img, title, lore) {
-
+function openLocation(img, title, lore, builtBy = "fisnisse09") {
   clearTimeout(closeTimer);
-
-  locationPopup.classList.remove("closing");
-
+  locationPopup.classList.remove('closing');
   popupImage.src = img;
   popupImage.alt = title;
   popupTitle.textContent = title;
   popupLore.textContent = lore;
-
-  locationPopup.classList.add("active");
+  popupBuiltBy.textContent = builtBy;
+  locationPopup.classList.add('active');
 }
 
-function closePopup() {
-
-  locationPopup.classList.add("closing");
-
-  closeTimer = setTimeout(() => {
-    locationPopup.classList.remove("active");
-    locationPopup.classList.remove("closing");
-  }, 200);
-}
-
-locationPopup.addEventListener("click", function(event) {
-  if (event.target === locationPopup) {
-    closePopup();
+function closePopup(e) {
+  if (!e || e.target === locationPopup) {
+    locationPopup.classList.add('closing');
+    closeTimer = setTimeout(() => {
+      locationPopup.classList.remove('active');
+      locationPopup.classList.remove('closing');
+    }, 200);
   }
-});
+}
+popupBox.addEventListener('click', e => e.stopPropagation());
 
-popupBox.addEventListener("click", function(event) {
-  event.stopPropagation();
-});
-
-popupClose.addEventListener("click", closePopup);
-
-
-/* =========================
-   MUSIC PLAYER
-========================= */
-
+// Music player
 const songs = [
-  {
-    title: "Jeff Syndicate",
-    src: "Jeff Syndicate.mp3"
-  },
-  {
-    title: "Happy Day of Robloxia",
-    src: "Happy Day of Robloxia.mp3"
-  },
-  {
-    title: "Wind of Fjords",
-    src: "Wind of Fjords.mp3"
-  },
-  {
-    title: "The Great Strategy",
-    src: "Roblox Main Theme.mp3"
-  },
-  {
-    title: "Cursed Abbey",
-    src: "Cursed Abbey.mp3"
-  },
-  {
-    title: "Halo Theme",
-    src: "HALO.mp3"
-  }
+  { title: "Jeff Syndicate", src: "Jeff Syndicate.mp3" },
+  { title: "Happy Day of Robloxia", src: "Happy Day of Robloxia.mp3" },
+  { title: "Wind of Fjords", src: "Wind of Fjords.mp3" },
+  { title: "The Great Strategy", src: "Roblox Main Theme.mp3" },
+  { title: "Cursed Abbey", src: "Cursed Abbey.mp3" },
+  { title: "Halo Theme", src: "HALO.mp3" }
 ];
 
 let currentSongIndex = 0;
+const radioAudio = document.getElementById('radio-audio');
+const currentSongText = document.getElementById('current-song');
+const playPauseBtn = document.getElementById('play-pause');
+const loopBtn = document.getElementById('loop-song');
+const prevBtn = document.getElementById('prev-song');
+const nextBtn = document.getElementById('next-song');
+const musicButton = document.getElementById('music-button');
+const musicPopup = document.getElementById('music-popup');
 let isPlaying = false;
 
-const radioAudio = document.getElementById("radio-audio");
-const currentSongText = document.getElementById("current-song");
-const playPauseBtn = document.getElementById("play-pause");
-const loopBtn = document.getElementById("loop-song");
-const prevBtn = document.getElementById("prev-song");
-const nextBtn = document.getElementById("next-song");
-const musicButton = document.getElementById("music-button");
-const musicPopup = document.getElementById("music-popup");
-
-
 function loadSong(index) {
-
   radioAudio.src = songs[index].src;
-
-  currentSongText.textContent =
-    "Now Playing: " + songs[index].title;
+  currentSongText.textContent = "Now Playing: " + songs[index].title;
 }
-
 
 function togglePlayPause() {
-
-  if (radioAudio.paused) {
-
-    radioAudio.play()
-      .then(() => {
-        isPlaying = true;
-        playPauseBtn.textContent = "Pause";
-      })
-      .catch(() => {
-        isPlaying = false;
-        playPauseBtn.textContent = "Play";
-      });
-
-  } else {
-
+  if (isPlaying) {
     radioAudio.pause();
-
     isPlaying = false;
     playPauseBtn.textContent = "Play";
+  } else {
+    radioAudio.play();
+    isPlaying = true;
+    playPauseBtn.textContent = "Pause";
   }
 }
-
 
 function playNextSong() {
-
-  currentSongIndex =
-    (currentSongIndex + 1) % songs.length;
-
+  currentSongIndex = (currentSongIndex + 1) % songs.length;
   loadSong(currentSongIndex);
-
-  if (isPlaying) {
-    radioAudio.play().catch(() => {});
-  }
+  if (isPlaying) radioAudio.play();
 }
-
 
 function playPrevSong() {
-
-  currentSongIndex =
-    (currentSongIndex - 1 + songs.length) % songs.length;
-
+  currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
   loadSong(currentSongIndex);
-
-  if (isPlaying) {
-    radioAudio.play().catch(() => {});
-  }
+  if (isPlaying) radioAudio.play();
 }
-
 
 function toggleLoop() {
-
+  loopBtn.classList.toggle('active');
   radioAudio.loop = !radioAudio.loop;
-
-  loopBtn.classList.toggle(
-    "active",
-    radioAudio.loop
-  );
 }
 
-
-radioAudio.addEventListener("play", function() {
-  isPlaying = true;
-  playPauseBtn.textContent = "Pause";
-});
-
-
-radioAudio.addEventListener("pause", function() {
-  isPlaying = false;
-  playPauseBtn.textContent = "Play";
-});
-
-
-radioAudio.addEventListener("ended", function() {
-
+// Auto next when song ends
+radioAudio.addEventListener('ended', () => {
   if (!radioAudio.loop) {
     playNextSong();
   }
-
 });
 
-
-musicButton.addEventListener("click", function() {
-  musicPopup.classList.toggle("active");
-});
-
-playPauseBtn.addEventListener("click", togglePlayPause);
-nextBtn.addEventListener("click", playNextSong);
-prevBtn.addEventListener("click", playPrevSong);
-loopBtn.addEventListener("click", toggleLoop);
+musicButton.onclick = () => musicPopup.classList.toggle('active');
+playPauseBtn.onclick = togglePlayPause;
+nextBtn.onclick = playNextSong;
+prevBtn.onclick = playPrevSong;
+loopBtn.onclick = toggleLoop;
 
 loadSong(currentSongIndex);
 
-
-/* =========================
-   CONTENT
-========================= */
-
+// Tab content
 function showContent(tab) {
-
-  const content = document.getElementById("content");
-
-  /* Close sidebar */
+  // Stäng sidebar automatiskt
   document.getElementById("sidebar").classList.remove("active");
   document.getElementById("overlay").classList.remove("active");
   document.querySelector(".tab-toggle").textContent = "☰";
 
-
-  /* HOME */
+  const content = document.getElementById('content');
+  content.innerHTML = "";
 
   if (tab === "home") {
-
     content.innerHTML = `
-      <img src="Retro-Plains-Wiki.png" alt="Welcome">
-      <br>
-
-      <a href="index.html" class="button">
-        Back to Home
-      </a>
-
-      <a
-        href="https://www.roblox.com/games/125897335112047/W-I-P-The-Town-of-Retro-Plains"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="roblox-button"
-      >
-        Play Retro Plains on Roblox
-      </a>
+      <img src="Retro-Plains-Wiki.png" alt="Welcome"><br>
+      <a href="index.html" class="button">Back to Home</a>
+      <a href="https://www.roblox.com/games/125897335112047/W-I-P-The-Town-of-Retro-Plains" target="_blank" class="roblox-button">Play Retro Plains on Roblox</a>
     `;
-
-  }
-
-
-  /* ABOUT */
-
-  else if (tab === "about") {
-
+  } else if (tab === "about") {
     content.innerHTML = `
       <h2>About Retro Plains</h2>
-
-      <p>
-        Retro Plains is a charming classic Robloxian valley nestled
-        between blocky hills and timeless terrain, completely untouched
-        by modern noise.
-
-        Inspired by the purest classic Robloxian roots, it is a peaceful
-        township where simplicity meets pixelated serenity.
-
-        Cobblestone paths wind gently between cozy houses, tall oak trees,
-        and sturdy pines, guided by the soft glow of neon-lit lampposts.
-
-        Beyond the town lies the Bloxian Archipelago, home to the mighty
-        Bloxium Fortress that still holds the proud history of their
-        strength and victories in the great Naval Warfares.
-
-        Be sure to visit Retroium Castle, once the seat of power of the
-        former king of Retro Plains, Bloxius the IV.
-
-        Stop by the Retro Plains Farm, lovingly run by the Bloxian Family.
-        Here they grow golden wheat, sweet corn, crisp carrots, and much
-        more — keeping the stomachs of everyone in town happily full.
-
-        When you're ready to travel farther, hop aboard the Retro Railway
-        High Speed Train System.
-
-        Ride the rails to Snowy Bloxlands, Neonblox Central, or even
-        Ambergrove, all thanks to the skilled train driver Lellesnygg.
-
-        This town may be small, but its heart is big and growing every
-        second — lovingly built by fisnisse09 and RobloxArvid.
-      </p>
+      <p>Retro Plains is a charming classic Robloxian valley nestled between blocky hills and timeless terrain, completely untouched by modern noise. Inspired by the purest classic Robloxian roots, it is a peaceful township where simplicity meets pixelated serenity.
+      Cobblestone paths wind gently between cozy houses, tall oak trees, and sturdy pines, guided by the soft glow of neon-lit lampposts. Beyond the town lies the Bloxian Archipelago, home to the mighty Bloxium Fortress that still holds the proud history of their strength and victories in the great Naval Warfares. Be sure to visit Retroium Castle, once the seat of power of the former king of Retro Plains, Bloxius the IV.
+      Stop by the Retro Plains Farm, lovingly run by the Bloxian Family. Here they grow golden wheat, sweet corn, crisp carrots, and much more — keeping the stomachs of everyone in town happily full.
+      When you’re ready to travel farther, hop aboard the Retro Railway High Speed Train System. Ride the rails to Snowy Bloxlands, Neonblox Central, or even Ambergrove, all thanks to the skilled train driver Lellesnygg.
+      This town may be small, but its heart is big and growing every second — lovingly built by fisnisse09 and RobloxArvid.</p>
     `;
-
-  }
-
-
-  /* LOCATIONS */
-
-  else if (tab === "locations") {
-
+  } else if (tab === "locations") {
     content.innerHTML = `
       <h2>Locations of Retro Plains</h2>
-
       <div class="rect-container">
-
-        <div
-          class="rectangle"
-          onclick="openLocation(
-            'Retro Plains Centre.png',
-            'Retro Plains Centre',
-            'The bustling centre of Retro Plains, filled with cozy stalls, shops, and friendly Robloxians.'
-          )"
-        >
-          <img src="Retro Plains Centre.png" alt="Retro Plains Centre">
+        <div class="rectangle" onclick="openLocation('Retro Plains Centre.png','Retro Plains Centre','The bustling centre of Retro Plains, filled with cozy stalls, shops, and friendly Robloxians.','fisnisse09')">
+          <img src="Retro Plains Centre.png">
         </div>
-
-
-        <div
-          class="rectangle"
-          onclick="openLocation(
-            'Retro Plains Hospital.png',
-            'Retro Plains Hospital',
-            'Where residents receive care and attention. Known for its helpful staff.'
-          )"
-        >
-          <img src="Retro Plains Hospital.png" alt="Retro Plains Hospital">
+        <div class="rectangle" onclick="openLocation('Retro Plains Hospital.png','Retro Plains Hospital','Where residents receive care and attention. Known for its helpful staff.','fisnisse09')">
+          <img src="Retro Plains Hospital.png">
         </div>
-
-
-        <div
-          class="rectangle"
-          onclick="openLocation(
-            'Retro Plains Farm.png',
-            'Retro Plains Farm',
-            'Scenic farmland tended by the Bloxian Family that feeds the population of Retro Plains.'
-          )"
-        >
-          <img src="Retro Plains Farm.png" alt="Retro Plains Farm">
+        <div class="rectangle" onclick="openLocation('Retro Plains Farm.png','Retro Plains Farm','Scenic farmland tended by the Bloxian Family that feeds the Population of Retro Plains.','fisnisse09')">
+          <img src="Retro Plains Farm.png">
         </div>
-
-
-        <div
-          class="rectangle"
-          onclick="openLocation(
-            'Grandma and Grandpas House.png',
-            'Grandma & Grandpas House',
-            'Filled with stories, memories, and laughter.'
-          )"
-        >
-          <img src="Grandma and Grandpas House.png" alt="Grandma & Grandpas House">
+        <div class="rectangle" onclick="openLocation('Grandma and Grandpas House.png','Grandma & Grandpas House','Filled with stories, memories, and laughter.','fisnisse09')">
+          <img src="Grandma and Grandpas House.png">
         </div>
-
-
-        <div
-          class="rectangle"
-          onclick="openLocation(
-            'Mayors Cabin.png',
-            'Mayors Cabin',
-            'Where town decisions are made, ensuring charm and peace.'
-          )"
-        >
-          <img src="Mayors Cabin.png" alt="Mayors Cabin">
+        <div class="rectangle" onclick="openLocation('Mayors Cabin.png','Mayors Cabin','Where town decisions are made, ensuring charm and peace.','fisnisse09')">
+          <img src="Mayors Cabin.png">
         </div>
-
-
-        <div
-          class="rectangle"
-          onclick="openLocation(
-            'Retroium Castle.png',
-            'Retroium Castle',
-            'Historic castle of Bloxius IV.'
-          )"
-        >
-          <img src="Retroium Castle.png" alt="Retroium Castle">
+        <div class="rectangle" onclick="openLocation('Retroium Castle.png','Retroium Castle','Historic castle of Bloxius IV.','fisnisse09')">
+          <img src="Retroium Castle.png">
         </div>
-
-
-        <div
-          class="rectangle"
-          onclick="openLocation(
-            'Retro Plains Police Station.png',
-            'Retro Plains Police Station',
-            'Hub of safety and order.'
-          )"
-        >
-          <img src="Retro Plains Police Station.png" alt="Retro Plains Police Station">
+        <div class="rectangle" onclick="openLocation('Retro Plains Police Station.png','Retro Plains Police Station','Hub of safety and order.','fisnisse09')">
+          <img src="Retro Plains Police Station.png">
         </div>
-
-
-        <div
-          class="rectangle"
-          onclick="openLocation(
-            'MONTYLOKS Luxury Cabin.png',
-            'MONTYLOKS Luxury Cabin',
-            'Private retreat with luxurious interiors.'
-          )"
-        >
-          <img src="MONTYLOKS Luxury Cabin.png" alt="MONTYLOKS Luxury Cabin">
+        <div class="rectangle" onclick="openLocation('MONTYLOKS Luxury Cabin.png','MONTYLOKS Luxury Cabin','Private retreat with luxurious interiors.','fisnisse09')">
+          <img src="MONTYLOKS Luxury Cabin.png">
         </div>
-
-
-        <div
-          class="rectangle"
-          onclick="openLocation(
-            'Retro Plains Coastal City.png',
-            'Rarö',
-            'Coastal city with beautiful beaches and a busy port.'
-          )"
-        >
-          <img src="Retro Plains Coastal City.png" alt="Rarö">
+        <div class="rectangle" onclick="openLocation('Retro Plains Coastal City.png','Rarö','Coastal city with beautiful beaches and a busy port.','fisnisse09')">
+          <img src="Retro Plains Coastal City.png">
         </div>
-
-
-        <div
-          class="rectangle"
-          onclick="openLocation(
-            'Retro Plains Metro.png',
-            'Retro Plains Metro',
-            'Central hub connecting the main parts of Retro Plains.'
-          )"
-        >
-          <img src="Retro Plains Metro.png" alt="Retro Plains Metro">
+        <div class="rectangle" onclick="openLocation('Retro Plains Metro.png','Retro Plains Metro','Central hub connecting the main parts of Retro Plains.','fisnisse09')">
+          <img src="Retro Plains Metro.png">
         </div>
-
-
-        <div
-          class="rectangle"
-          onclick="openLocation(
-            'Retro Plains Train Station.png',
-            'Retro Plains Train Station',
-            'Main station serving Retro Plains residents and visitors.'
-          )"
-        >
-          <img src="Retro Plains Train Station.png" alt="Retro Plains Train Station">
+        <div class="rectangle" onclick="openLocation('Retro Plains Train Station.png','Retro Plains Train Station','Main station serving Retro Plains residents and visitors.','fisnisse09')">
+          <img src="Retro Plains Train Station.png">
         </div>
-
       </div>
     `;
-
-  }
-
-
-  /* RETRO RAILWAYS */
-
-  else if (tab === "railways") {
-
+  } else if (tab === "railways") {
     content.innerHTML = `
-      <h2 class="retro-railways">
-        Retro Railways
-      </h2>
-
+      <h2 class="retro-railways">Retro Railways</h2>
       <div class="rect-container">
-
         <div class="rectangle under-construction"></div>
         <div class="rectangle under-construction"></div>
         <div class="rectangle under-construction"></div>
         <div class="rectangle under-construction"></div>
         <div class="rectangle under-construction"></div>
         <div class="rectangle under-construction"></div>
-
       </div>
     `;
-
-  }
-
-
-  /* CREATORS */
-
-  else if (tab === "creators") {
-
+  } else if (tab === "creators") {
     content.innerHTML = `
       <h2>Creators</h2>
-
       <div class="rect-container">
-
-        <div
-          class="rectangle"
-          onclick="openLocation(
-            'fisnisse095.webp',
-            'Tragedy (@fisnisse09)',
-            'The Creator of Retro Plains.'
-          )"
-        >
-          <img
-            src="fisnisse095.webp"
-            class="medium-img"
-            alt="Tragedy"
-          >
+        <div class="rectangle" onclick="openLocation('fisnisse095.webp','Tragedy (@fisnisse09)','The Creator of Retro Plains.','fisnisse09')">
+          <img src="fisnisse095.webp" class="medium-img">
         </div>
-
-
-        <div
-          class="rectangle"
-          onclick="openLocation(
-            'Prexii.webp',
-            'Prexii (@RobloxArvid)',
-            'Co-Creator and Scripter of Retro Plains.'
-          )"
-        >
-          <img
-            src="Prexii.webp"
-            class="medium-img"
-            alt="Prexii"
-          >
+        <div class="rectangle" onclick="openLocation('Prexii.webp','Prexii (@RobloxArvid)','Co-Creator and Scripter of Retro Plains.','RobloxArvid')">
+          <img src="Prexii.webp" class="medium-img">
         </div>
-
       </div>
     `;
-
-  }
-
-
-  /* SPECIAL PEOPLE */
-
-  else if (tab === "special") {
-
+  } else if (tab === "special") {
     content.innerHTML = `
       <h2>Special People</h2>
-
       <div class="rect-container">
-
-        <div
-          class="rectangle"
-          onclick="openLocation(
-            'Lellesnygg.webp',
-            'Lellesnygg',
-            'CEO of Retro Railways, respected and kind-hearted person.'
-          )"
-        >
-          <img
-            src="Lellesnygg.webp"
-            class="medium-img"
-            alt="Lellesnygg"
-          >
+        <div class="rectangle" onclick="openLocation('Lellesnygg.webp','Lellesnygg','CEO of Retro Railways, Respected and Kind hearted Person.','Lellesnygg')">
+          <img src="Lellesnygg.webp" class="medium-img">
         </div>
-
       </div>
     `;
-
   }
 }
 
-
-/* Start page */
-showContent("home");
-
+showContent('home');
 </script>
-
 </body>
 </html>
