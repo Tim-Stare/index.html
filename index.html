@@ -35,31 +35,31 @@
 }
 
 body.dark {
-  /* Dark mode - mörkblått + mörkgrått */
-  --topbar-bg: #0a1628;
-  --topbar-text: #d0d8e0;
-  --sidebar-bg: #121c2b;
-  --sidebar-text: #d0d8e0;
-  --sidebar-border: #2a3f5f;
-  --sidebar-btn-bg: #121c2b;
-  --sidebar-btn-hover: #1e2d45;
-  --content-text: #d0d8e0;
-  --footer-bg: #0a1628;
-  --footer-text: #d0d8e0;
-  --button-bg: #1e3a5f;
+  /* Dark mode - mörkare bakgrund + mörkblått/grått */
+  --topbar-bg: #060d18;
+  --topbar-text: #c8d0d8;
+  --sidebar-bg: #0c1420;
+  --sidebar-text: #c8d0d8;
+  --sidebar-border: #1e2f4a;
+  --sidebar-btn-bg: #0c1420;
+  --sidebar-btn-hover: #162033;
+  --content-text: #c8d0d8;
+  --footer-bg: #060d18;
+  --footer-text: #c8d0d8;
+  --button-bg: #1a2f4d;
   --button-text: #ffffff;
-  --about-outer: #0f1c2e;
-  --about-inner: #152238;
-  --about-text: #d0d8e0;
-  --about-heading: #7a9cc5;
-  --rect-bg: #152238;
-  --rect-hover: #0d1828;
-  --popup-bg: rgba(10, 22, 40, 0.96);
-  --popup-text: #d0d8e0;
-  --music-popup-bg: #121c2b;
-  --music-popup-border: #2a3f5f;
-  --music-btn-bg: #1e3a5f;
-  --overlay-bg: rgba(0,0,0,0.55);
+  --about-outer: #0a121f;
+  --about-inner: #101a2a;
+  --about-text: #c8d0d8;
+  --about-heading: #6b8cb3;
+  --rect-bg: #101a2a;
+  --rect-hover: #0a121f;
+  --popup-bg: rgba(6, 13, 24, 0.97);
+  --popup-text: #c8d0d8;
+  --music-popup-bg: #0c1420;
+  --music-popup-border: #1e2f4a;
+  --music-btn-bg: #1a2f4d;
+  --overlay-bg: rgba(0,0,0,0.6);
 }
 
 html, body {
@@ -71,6 +71,13 @@ html, body {
   overflow-x: hidden;
   color: var(--content-text);
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Mörkare bakgrund i dark mode */
+body.dark {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)), url('Stud.png');
+  background-size: cover;
+  background-position: center;
 }
 
 /* Top Bar */
@@ -263,20 +270,20 @@ html, body {
   border: 2px solid black;
 }
 
-/* ===== Person cards (Creators & Special) – vit bakgrund redan i boxen ===== */
+/* ===== Person cards – större vit ruta (nästan till kanterna) ===== */
 .rectangle.person-card {
   background-color: var(--rect-bg);
 }
 .rectangle.person-card img {
-  width: 70%;
-  height: 70%;
+  width: 92%;
+  height: 88%;
   object-fit: contain;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: #ffffff;
   border-radius: 10px;
-  padding: 8px;
+  padding: 10px;
   box-sizing: border-box;
 }
 
@@ -285,7 +292,7 @@ html, body {
   background-color: var(--rect-hover);
 }
 .rectangle.person-card:hover img {
-  filter: brightness(0.85);
+  filter: brightness(0.88);
 }
 
 /* Buttons */
