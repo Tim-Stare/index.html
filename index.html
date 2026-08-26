@@ -5,13 +5,70 @@
 <title>Retro Plains Wiki</title>
 <link rel="icon" type="image/png" href="Retro-Plains-HTML.png">
 <style>
+:root {
+  /* Light mode */
+  --bg-image: url('Stud.png');
+  --topbar-bg: #024FA2;
+  --topbar-text: #ffffff;
+  --sidebar-bg: #ffffff;
+  --sidebar-text: #000000;
+  --sidebar-border: #024FA2;
+  --sidebar-btn-bg: #f8f8f8;
+  --sidebar-btn-hover: #e0e0e0;
+  --content-text: #222222;
+  --footer-bg: #024FA2;
+  --footer-text: #ffffff;
+  --button-bg: #024FA2;
+  --button-text: #ffffff;
+  --about-outer: #024FA2;
+  --about-inner: #ffffff;
+  --about-text: #222222;
+  --about-heading: #024FA2;
+  --rect-bg: #024FA2;
+  --popup-bg: rgba(2,79,162,0.92);
+  --popup-text: #ffffff;
+  --music-popup-bg: #ffffff;
+  --music-popup-border: #024FA2;
+  --music-btn-bg: #024FA2;
+  --overlay-bg: rgba(0,0,0,0.2);
+}
+
+body.dark {
+  /* Dark mode - mörkblått + mörkgrått */
+  --topbar-bg: #0a1628;
+  --topbar-text: #d0d8e0;
+  --sidebar-bg: #121c2b;
+  --sidebar-text: #d0d8e0;
+  --sidebar-border: #2a3f5f;
+  --sidebar-btn-bg: #121c2b;
+  --sidebar-btn-hover: #1e2d45;
+  --content-text: #d0d8e0;
+  --footer-bg: #0a1628;
+  --footer-text: #d0d8e0;
+  --button-bg: #1e3a5f;
+  --button-text: #ffffff;
+  --about-outer: #0f1c2e;
+  --about-inner: #152238;
+  --about-text: #d0d8e0;
+  --about-heading: #7a9cc5;
+  --rect-bg: #152238;
+  --popup-bg: rgba(10, 22, 40, 0.96);
+  --popup-text: #d0d8e0;
+  --music-popup-bg: #121c2b;
+  --music-popup-border: #2a3f5f;
+  --music-btn-bg: #1e3a5f;
+  --overlay-bg: rgba(0,0,0,0.55);
+}
+
 html, body {
   height: 100%;
   margin: 0;
   font-family: Arial, sans-serif;
-  background: url('Stud.png') no-repeat center center;
+  background: var(--bg-image) no-repeat center center;
   background-size: cover;
   overflow-x: hidden;
+  color: var(--content-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Top Bar */
@@ -19,8 +76,8 @@ html, body {
   position: sticky;
   top: 0;
   z-index: 20;
-  background-color: #024FA2;
-  color: white;
+  background-color: var(--topbar-bg);
+  color: var(--topbar-text);
   height: 55px;
   display: flex;
   align-items: center;
@@ -32,12 +89,33 @@ html, body {
 .tab-toggle {
   background: none;
   border: none;
-  color: white;
+  color: var(--topbar-text);
   font-size: 26px;
   cursor: pointer;
   margin-right: 12px;
 }
 .clock { font-size: 15px; }
+
+/* Dark mode toggle */
+.theme-toggle {
+  background: none;
+  border: 2px solid var(--topbar-text);
+  color: var(--topbar-text);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  margin-left: 12px;
+}
+.theme-toggle:hover {
+  transform: scale(1.1);
+  background: rgba(255,255,255,0.12);
+}
 
 /* Sidebar */
 .sidebar {
@@ -46,13 +124,13 @@ html, body {
   left: 0;
   width: 250px;
   bottom: 60px;
-  background-color: #fff;
-  border-right: 2px solid #024FA2;
+  background-color: var(--sidebar-bg);
+  border-right: 2px solid var(--sidebar-border);
   transform: translateX(-100%);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
   overflow-y: auto;
   z-index: 100;
-  box-shadow: 2px 0 8px rgba(0,0,0,0.3);
+  box-shadow: 2px 0 8px rgba(0,0,0,0.35);
 }
 .sidebar.active { transform: translateX(0); }
 .sidebar button {
@@ -61,8 +139,8 @@ html, body {
   padding: 12px;
   margin: 0;
   border: none;
-  background-color: #f8f8f8;
-  color: #000;
+  background-color: var(--sidebar-btn-bg);
+  color: var(--sidebar-text);
   font-size: 16px;
   font-weight: 600;
   text-align: left;
@@ -71,12 +149,12 @@ html, body {
   cursor: pointer;
 }
 .sidebar button:hover {
-  background-color: #e0e0e0;
-  border-left-color: #024FA2;
+  background-color: var(--sidebar-btn-hover);
+  border-left-color: var(--sidebar-border);
 }
 .sidebar button.active {
-  background-color: #ddd;
-  border-left-color: #024FA2;
+  background-color: var(--sidebar-btn-hover);
+  border-left-color: var(--sidebar-border);
   font-weight: bold;
 }
 
@@ -87,7 +165,7 @@ html, body {
   left: 0;
   right: 0;
   bottom: 60px;
-  background: rgba(0,0,0,0.2);
+  background: var(--overlay-bg);
   z-index: 90;
   display: none;
 }
@@ -106,8 +184,8 @@ html, body {
 
 /* Footer */
 .footer {
-  background-color: #024FA2;
-  color: white;
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
   height: 60px;
   display: flex;
   align-items: center;
@@ -118,6 +196,7 @@ html, body {
   right: 0;
   font-size: 16px;
   flex-direction: column;
+  transition: background-color 0.3s ease;
 }
 
 /* Rectangles */
@@ -130,7 +209,7 @@ html, body {
 }
 .rectangle {
   position: relative;
-  background-color: #024FA2;
+  background-color: var(--rect-bg);
   color: white;
   width: 300px;
   height: 200px;
@@ -140,7 +219,7 @@ html, body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, background-color 0.3s ease;
 }
 .rectangle img {
   width: 100%;
@@ -202,8 +281,8 @@ html, body {
   max-width: 90%;
   margin: 10px auto;
   padding: 15px 20px;
-  background-color: #024FA2;
-  color: white;
+  background-color: var(--button-bg);
+  color: var(--button-text);
   border: none;
   border-radius: 12px;
   font-weight: bold;
@@ -227,26 +306,28 @@ html, body {
 .about-container {
   max-width: 850px;
   margin: 30px auto;
-  background-color: #024FA2;          /* blå bakgrund */
+  background-color: var(--about-outer);
   border-radius: 18px;
-  padding: 18px;                      /* skapar "ramen" runt den vita rutan */
+  padding: 18px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: background-color 0.3s ease;
 }
 
 .about-inner {
-  background-color: #ffffff;          /* vit bakgrund för texten */
+  background-color: var(--about-inner);
   border-radius: 12px;
   padding: 28px 32px;
-  color: #222;
+  color: var(--about-text);
   font-size: 17px;
   line-height: 1.7;
   text-align: left;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .about-inner h2 {
   margin-top: 0;
   margin-bottom: 18px;
-  color: #024FA2;
+  color: var(--about-heading);
   text-align: center;
   font-size: 26px;
 }
@@ -279,14 +360,15 @@ html, body {
   bottom: 70px;
   right: -350px;
   width: 300px;
-  background: #fff;
-  border: 2px solid #024FA2;
+  background: var(--music-popup-bg);
+  border: 2px solid var(--music-popup-border);
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   padding: 10px;
   text-align: center;
-  transition: right 0.3s ease;
+  transition: right 0.3s ease, background-color 0.3s ease;
   z-index: 200;
+  color: var(--content-text);
 }
 #music-popup.active { right: 20px; }
 #radio-header img {
@@ -300,7 +382,7 @@ html, body {
   margin-top: 10px;
 }
 #music-controls button {
-  background: #024FA2;
+  background: var(--music-btn-bg);
   border: none;
   border-radius: 8px;
   padding: 8px 12px;
@@ -330,7 +412,7 @@ html, body {
 .popup-box {
   width: 85%;
   max-width: 950px;
-  background: rgba(2,79,162,0.92);
+  background: var(--popup-bg);
   border-radius: 14px;
   padding: 20px;
   display: flex;
@@ -338,6 +420,8 @@ html, body {
   position: relative;
   box-shadow: 0 18px 40px rgba(0,0,0,0.6);
   transform-origin: center center;
+  color: var(--popup-text);
+  transition: background-color 0.3s ease;
 }
 @keyframes popupIn {
   from { opacity: 0; transform: scale(0.96); }
@@ -362,15 +446,24 @@ html, body {
   border-radius: 10px;
   display: block;
 }
+
+/* Vit bakgrund för personbilder (creators / special) */
+.popup-left img.person-img {
+  background: #ffffff;
+  padding: 12px;
+  object-fit: contain;
+  max-height: 380px;
+}
+
 .popup-title {
-  color: white;
+  color: var(--popup-text);
   font-weight: bold;
   margin-top: 10px;
   font-size: 20px;
 }
 .popup-right {
   width: 50%;
-  color: white;
+  color: var(--popup-text);
   text-align: left;
   line-height: 1.45;
 }
@@ -379,7 +472,7 @@ html, body {
   position: absolute;
   top: 10px;
   right: 15px;
-  color: white;
+  color: var(--popup-text);
   font-size: 24px;
   cursor: pointer;
 }
@@ -393,7 +486,10 @@ html, body {
     <img src="Roblox-Logo.png" alt="Roblox Logo">
     <img src="Retro-Plains-Logo-2.png" alt="Retro Plains Logo">
   </div>
-  <div class="clock" id="clock"></div>
+  <div style="display: flex; align-items: center;">
+    <div class="clock" id="clock"></div>
+    <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">🌙</button>
+  </div>
 </div>
 
 <div class="sidebar" id="sidebar">
@@ -451,7 +547,27 @@ html, body {
 </div>
 
 <script>
-// Clock
+// ========== DARK MODE ==========
+const themeToggle = document.getElementById('themeToggle');
+const body = document.body;
+
+if (localStorage.getItem('theme') === 'dark') {
+  body.classList.add('dark');
+  themeToggle.textContent = '☀️';
+}
+
+themeToggle.addEventListener('click', () => {
+  body.classList.toggle('dark');
+  if (body.classList.contains('dark')) {
+    themeToggle.textContent = '☀️';
+    localStorage.setItem('theme', 'dark');
+  } else {
+    themeToggle.textContent = '🌙';
+    localStorage.setItem('theme', 'light');
+  }
+});
+
+// ========== CLOCK ==========
 function updateClock() {
   const now = new Date();
   document.getElementById("clock").textContent = now.toLocaleTimeString([], {
@@ -463,7 +579,7 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
-// Sidebar toggle
+// ========== SIDEBAR ==========
 function toggleSidebar() {
   document.getElementById("sidebar").classList.toggle("active");
   document.getElementById("overlay").classList.toggle("active");
@@ -471,10 +587,10 @@ function toggleSidebar() {
     document.getElementById("sidebar").classList.contains("active") ? "✖" : "☰";
 }
 
-// Last updated
+// ========== LAST UPDATED ==========
 document.getElementById('last-updated').textContent = 'Last Updated: ' + document.lastModified;
 
-// Popup handlers
+// ========== POPUP ==========
 const locationPopup = document.getElementById('locationPopup');
 const popupBox = document.getElementById('popupBox');
 const popupImage = document.getElementById('popupImage');
@@ -483,7 +599,7 @@ const popupLore = document.getElementById('popupLore');
 const popupBuiltBy = document.getElementById('popupBuiltBy');
 let closeTimer = null;
 
-function openLocation(img, title, lore, builtBy = "fisnisse09") {
+function openLocation(img, title, lore, builtBy = "fisnisse09", isPerson = false) {
   clearTimeout(closeTimer);
   locationPopup.classList.remove('closing');
   popupImage.src = img;
@@ -491,6 +607,14 @@ function openLocation(img, title, lore, builtBy = "fisnisse09") {
   popupTitle.textContent = title;
   popupLore.textContent = lore;
   popupBuiltBy.textContent = builtBy;
+
+  // Vit bakgrund bara för personer (creators / special)
+  if (isPerson) {
+    popupImage.classList.add('person-img');
+  } else {
+    popupImage.classList.remove('person-img');
+  }
+
   locationPopup.classList.add('active');
 }
 
@@ -505,7 +629,7 @@ function closePopup(e) {
 }
 popupBox.addEventListener('click', e => e.stopPropagation());
 
-// Music player
+// ========== MUSIC PLAYER ==========
 const songs = [
   { title: "Jeff Syndicate", src: "Jeff Syndicate.mp3" },
   { title: "Happy Day of Robloxia", src: "Happy Day of Robloxia.mp3" },
@@ -560,7 +684,6 @@ function toggleLoop() {
   radioAudio.loop = !radioAudio.loop;
 }
 
-// Auto next when song ends
 radioAudio.addEventListener('ended', () => {
   if (!radioAudio.loop) {
     playNextSong();
@@ -575,9 +698,8 @@ loopBtn.onclick = toggleLoop;
 
 loadSong(currentSongIndex);
 
-// Tab content
+// ========== TAB CONTENT ==========
 function showContent(tab) {
-  // Stäng sidebar automatiskt
   document.getElementById("sidebar").classList.remove("active");
   document.getElementById("overlay").classList.remove("active");
   document.querySelector(".tab-toggle").textContent = "☰";
@@ -663,10 +785,10 @@ function showContent(tab) {
     content.innerHTML = `
       <h2>Creators</h2>
       <div class="rect-container">
-        <div class="rectangle" onclick="openLocation('fisnisse095.webp','Tragedy (@fisnisse09)','The Creator of Retro Plains.','fisnisse09')">
+        <div class="rectangle" onclick="openLocation('fisnisse095.webp','Tragedy (@fisnisse09)','The Creator of Retro Plains.','fisnisse09', true)">
           <img src="fisnisse095.webp" class="medium-img">
         </div>
-        <div class="rectangle" onclick="openLocation('Prexii.webp','Prexii (@RobloxArvid)','Co-Creator and Scripter of Retro Plains.','RobloxArvid')">
+        <div class="rectangle" onclick="openLocation('Prexii.webp','Prexii (@RobloxArvid)','Co-Creator and Scripter of Retro Plains.','RobloxArvid', true)">
           <img src="Prexii.webp" class="medium-img">
         </div>
       </div>
@@ -675,7 +797,7 @@ function showContent(tab) {
     content.innerHTML = `
       <h2>Special People</h2>
       <div class="rect-container">
-        <div class="rectangle" onclick="openLocation('Lellesnygg.webp','Lellesnygg','CEO of Retro Railways, Respected and Kind hearted Person.','Lellesnygg')">
+        <div class="rectangle" onclick="openLocation('Lellesnygg.webp','Lellesnygg','CEO of Retro Railways, Respected and Kind hearted Person.','Lellesnygg', true)">
           <img src="Lellesnygg.webp" class="medium-img">
         </div>
       </div>
