@@ -25,6 +25,7 @@
   --about-text: #222222;
   --about-heading: #024FA2;
   --rect-bg: #024FA2;
+  --rect-hover: #013a7a;
   --popup-bg: rgba(2,79,162,0.92);
   --popup-text: #ffffff;
   --music-popup-bg: #ffffff;
@@ -52,6 +53,7 @@ body.dark {
   --about-text: #d0d8e0;
   --about-heading: #7a9cc5;
   --rect-bg: #152238;
+  --rect-hover: #0d1828;
   --popup-bg: rgba(10, 22, 40, 0.96);
   --popup-text: #d0d8e0;
   --music-popup-bg: #121c2b;
@@ -219,7 +221,7 @@ html, body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: transform 0.25s ease, background-color 0.3s ease;
+  transition: transform 0.25s ease, background-color 0.25s ease, filter 0.25s ease;
 }
 .rectangle img {
   width: 100%;
@@ -230,12 +232,19 @@ html, body {
   top: 0;
   left: 0;
   border-radius: 12px;
+  transition: filter 0.25s ease;
 }
-.rectangle .text-container { display: none; }
+
+/* Hover → mörkare */
 .rectangle:hover {
   transform: scale(1.02);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+  background-color: var(--rect-hover);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
 }
+.rectangle:hover img {
+  filter: brightness(0.75);
+}
+
 .rectangle.under-construction {
   background: url('Stud.png') no-repeat center center;
   background-size: cover;
@@ -254,24 +263,29 @@ html, body {
   border: 2px solid black;
 }
 
-/* Smaller images for creators & special people */
-.rectangle img.small-img {
-  width: 60%;
-  height: 60%;
-  object-fit: contain;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 12px;
+/* ===== Person cards (Creators & Special) – vit bakgrund redan i boxen ===== */
+.rectangle.person-card {
+  background-color: var(--rect-bg);
 }
-.rectangle img.medium-img {
-  width: 75%;
-  height: 75%;
+.rectangle.person-card img {
+  width: 70%;
+  height: 70%;
   object-fit: contain;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 12px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+/* Hover på person-cards */
+.rectangle.person-card:hover {
+  background-color: var(--rect-hover);
+}
+.rectangle.person-card:hover img {
+  filter: brightness(0.85);
 }
 
 /* Buttons */
@@ -447,12 +461,13 @@ html, body {
   display: block;
 }
 
-/* Vit bakgrund för personbilder (creators / special) */
+/* Mindre vit bakgrund i popup för personbilder */
 .popup-left img.person-img {
   background: #ffffff;
-  padding: 12px;
+  padding: 6px;
   object-fit: contain;
-  max-height: 380px;
+  max-height: 340px;
+  border-radius: 8px;
 }
 
 .popup-title {
@@ -608,7 +623,6 @@ function openLocation(img, title, lore, builtBy = "fisnisse09", isPerson = false
   popupLore.textContent = lore;
   popupBuiltBy.textContent = builtBy;
 
-  // Vit bakgrund bara för personer (creators / special)
   if (isPerson) {
     popupImage.classList.add('person-img');
   } else {
@@ -785,11 +799,11 @@ function showContent(tab) {
     content.innerHTML = `
       <h2>Creators</h2>
       <div class="rect-container">
-        <div class="rectangle" onclick="openLocation('fisnisse095.webp','Tragedy (@fisnisse09)','The Creator of Retro Plains.','fisnisse09', true)">
-          <img src="fisnisse095.webp" class="medium-img">
+        <div class="rectangle person-card" onclick="openLocation('fisnisse095.webp','Tragedy (@fisnisse09)','The Creator of Retro Plains.','fisnisse09', true)">
+          <img src="fisnisse095.webp">
         </div>
-        <div class="rectangle" onclick="openLocation('Prexii.webp','Prexii (@RobloxArvid)','Co-Creator and Scripter of Retro Plains.','RobloxArvid', true)">
-          <img src="Prexii.webp" class="medium-img">
+        <div class="rectangle person-card" onclick="openLocation('Prexii.webp','Prexii (@RobloxArvid)','Co-Creator and Scripter of Retro Plains.','RobloxArvid', true)">
+          <img src="Prexii.webp">
         </div>
       </div>
     `;
@@ -797,8 +811,8 @@ function showContent(tab) {
     content.innerHTML = `
       <h2>Special People</h2>
       <div class="rect-container">
-        <div class="rectangle" onclick="openLocation('Lellesnygg.webp','Lellesnygg','CEO of Retro Railways, Respected and Kind hearted Person.','Lellesnygg', true)">
-          <img src="Lellesnygg.webp" class="medium-img">
+        <div class="rectangle person-card" onclick="openLocation('Lellesnygg.webp','Lellesnygg','CEO of Retro Railways, Respected and Kind hearted Person.','Lellesnygg', true)">
+          <img src="Lellesnygg.webp">
         </div>
       </div>
     `;
