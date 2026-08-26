@@ -223,6 +223,38 @@ html, body {
   font-size: 28px;
 }
 
+/* ===== ABOUT TEXT CONTAINER ===== */
+.about-container {
+  max-width: 850px;
+  margin: 30px auto;
+  background-color: #024FA2;          /* blå bakgrund */
+  border-radius: 18px;
+  padding: 18px;                      /* skapar "ramen" runt den vita rutan */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.about-inner {
+  background-color: #ffffff;          /* vit bakgrund för texten */
+  border-radius: 12px;
+  padding: 28px 32px;
+  color: #222;
+  font-size: 17px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.about-inner h2 {
+  margin-top: 0;
+  margin-bottom: 18px;
+  color: #024FA2;
+  text-align: center;
+  font-size: 26px;
+}
+
+.about-inner p {
+  margin: 0 0 16px 0;
+}
+
 /* Music Player */
 #music-player-container {
   position: fixed;
@@ -561,12 +593,20 @@ function showContent(tab) {
     `;
   } else if (tab === "about") {
     content.innerHTML = `
-      <h2>About Retro Plains</h2>
-      <p>Retro Plains is a charming classic Robloxian valley nestled between blocky hills and timeless terrain, completely untouched by modern noise. Inspired by the purest classic Robloxian roots, it is a peaceful township where simplicity meets pixelated serenity.
-      Cobblestone paths wind gently between cozy houses, tall oak trees, and sturdy pines, guided by the soft glow of neon-lit lampposts. Beyond the town lies the Bloxian Archipelago, home to the mighty Bloxium Fortress that still holds the proud history of their strength and victories in the great Naval Warfares. Be sure to visit Retroium Castle, once the seat of power of the former king of Retro Plains, Bloxius the IV.
-      Stop by the Retro Plains Farm, lovingly run by the Bloxian Family. Here they grow golden wheat, sweet corn, crisp carrots, and much more — keeping the stomachs of everyone in town happily full.
-      When you’re ready to travel farther, hop aboard the Retro Railway High Speed Train System. Ride the rails to Snowy Bloxlands, Neonblox Central, or even Ambergrove, all thanks to the skilled train driver Lellesnygg.
-      This town may be small, but its heart is big and growing every second — lovingly built by fisnisse09 and RobloxArvid.</p>
+      <div class="about-container">
+        <div class="about-inner">
+          <h2>About Retro Plains</h2>
+          <p>Retro Plains is a charming classic Robloxian valley nestled between blocky hills and timeless terrain, completely untouched by modern noise. Inspired by the purest classic Robloxian roots, it is a peaceful township where simplicity meets pixelated serenity.</p>
+          
+          <p>Cobblestone paths wind gently between cozy houses, tall oak trees, and sturdy pines, guided by the soft glow of neon-lit lampposts. Beyond the town lies the Bloxian Archipelago, home to the mighty Bloxium Fortress that still holds the proud history of their strength and victories in the great Naval Warfares. Be sure to visit Retroium Castle, once the seat of power of the former king of Retro Plains, Bloxius the IV.</p>
+          
+          <p>Stop by the Retro Plains Farm, lovingly run by the Bloxian Family. Here they grow golden wheat, sweet corn, crisp carrots, and much more — keeping the stomachs of everyone in town happily full.</p>
+          
+          <p>When you’re ready to travel farther, hop aboard the Retro Railway High Speed Train System. Ride the rails to Snowy Bloxlands, Neonblox Central, or even Ambergrove, all thanks to the skilled train driver Lellesnygg.</p>
+          
+          <p>This town may be small, but its heart is big and growing every second — lovingly built by fisnisse09 and RobloxArvid.</p>
+        </div>
+      </div>
     `;
   } else if (tab === "locations") {
     content.innerHTML = `
