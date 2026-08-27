@@ -5,7 +5,7 @@
 Welcome to the official documentation and lore hub for Retro Plains.
 
  What's inside
-**[Website]((https://tim-stare.github.io/index.html/))** – The main site
+(https://tim-stare.github.io/index.html/) – The main site
  **Builders & Contributors** –
     @RobloxArvid
   
