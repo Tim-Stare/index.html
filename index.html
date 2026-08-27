@@ -520,7 +520,7 @@ body.dark {
   <button onclick="showContent('locations')">The Locations of Retro Plains</button>
   <button onclick="showContent('railways')">Retro Railways</button>
   <button onclick="showContent('creators')">Creators of Retro Plains</button>
-  <button onclick="showContent('special')">Contributors</button>
+  <button onclick="showContent('contributors')">Contributors</button>
 </div>
 
 <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
@@ -816,7 +816,7 @@ function showContent(tab) {
     `;
   } else if (tab === "contributors") {
     content.innerHTML = `
-      <h2>contriubtors</h2>
+      <h2>contributors</h2>
       <div class="rect-container">
         <div class="rectangle person-card" onclick="openLocation('Lellesnygg.webp','Lellesnygg','CEO of Retro Railways, Respected and Kind hearted Person.','Lellesnygg', true)">
           <img src="Lellesnygg.webp">
