@@ -8,4 +8,4 @@ Places that you can visit and some lore about them
 And much more!
 
 ![image_alt](https://tr.rbxcdn.com/180DAY-ae2fa39caf4344af12736493f5cfe0e0/768/432/Image/Webp/noFilter)
-2025 - 2026 @Retro-PLains--Wiki
+
