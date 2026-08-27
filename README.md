@@ -2,19 +2,19 @@
 
 **The Official Wiki of the Town of Retro Plains**
 
-Welcome to the official documentation and lore hub for Retro Plains.
+Welcome to the official documentation and lore hub for Retro Plains. 
 
- What's inside
-(https://tim-stare.github.io/index.html/) – The main site
- **Builders & Contributors** –
-    @RobloxArvid
+**Contributors and Builders**
+@fisnisse09 - **Founder and Main Builder**
+@RobloxArvid - **Scripter and Co-Founder**
+@Lellesnygg - **Contributor and Suggestor of Retro Railways and Much More**
+
+**The Main Website**
+(https://tim-stare.github.io/index.html/) 
   
+**Game on Roblox. Sadly Cancelled due to Roblox Age Verification Update**
 
-  The people who built and shaped the town
- **Places & Lore** – Locations you can visit and the stories behind them
-  And much more
-
-Explore the wiki to discover the history, locations, and community of Retro Plains.
+(https://www.roblox.com/games/125897335112047/The-Town-of-Retro-Plains)
 
 ![image_alt](https://tr.rbxcdn.com/180DAY-ae2fa39caf4344af12736493f5cfe0e0/768/432/Image/Webp/noFilter)
 
