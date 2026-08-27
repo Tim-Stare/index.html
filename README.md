@@ -5,8 +5,11 @@
 Welcome to the official documentation and lore hub for Retro Plains. 
 
 **Contributors and Builders**
+
 @fisnisse09 - **Founder and Main Builder**
+
 @RobloxArvid - **Scripter and Co-Founder**
+
 @Lellesnygg - **Contributor and Suggestor of Retro Railways and Much More**
 
 **The Main Website**
